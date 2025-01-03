@@ -12,22 +12,22 @@ function Navbar() {
           </div>
           <ul className='menubar'>
           <li className="item-navigation">
-            <a href='/indexPage/Page_home.jsx'>หน้าแรก</a>
+            <Link to='/'>หน้าแรก</Link>
           </li>
           <li className="item-navigation">
-            <a href='/TransactionPage/Trabnsaction.jsx'>ธุรกรรม</a>
+            <Link to='/Transaction'>ธุรกรรม</Link>
           </li>
           <li className="item-navigation">
-            <a href='../AnalystPage/analyst.jsx'>วิเคราะห์</a>
+            <Link to='/schedule'>วิเคราะห์</Link>
           </li>
           <li className="item-navigation">
-            <a href='../SchedulePage/Schedule.jsx'>รายการ</a>
+            <Link to='/analysis'>รายการ</Link>
           </li>
           <li className="item-navigation">
-            <a href='../ContactPage/Contact.jsx'>ติดต่อ</a>
+            <Link to='/contact'>ติดต่อ</Link>
           </li>
           <li className="item-navigation">
-            <a href='../NewsPage/News.jsx'>ข่าวสาร</a>
+            <Link to='/news'>ข่าวสาร</Link>
           </li>
           </ul>
          </div>

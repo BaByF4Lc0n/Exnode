@@ -8,7 +8,7 @@ import google_play from '../assets/playstore&appStoer/1664287128google-play-stor
 import app_store from '../assets/playstore&appStoer/app-store-google-play-button-png-favpng-FTFfzCVmWnedDG1qp2K2giafF.jpg';
 // component
 import Footer from '../Footer/footer';
-import Navbar from '../Navbar/navbar';
+import Navbar from '../Navigationbar/navbar';
 
 function index() {
   return (
