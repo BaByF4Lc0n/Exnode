@@ -1,27 +1,50 @@
 import React ,{ useState, useEffect } from 'react'; 
 import './index.css';
+import { Animator, ScrollContainer, ScrollPage, batch, Fade, FadeIn, FadeOut, Move, MoveIn, MoveOut, Sticky, StickyIn, StickyOut, Zoom, ZoomIn, ZoomOut } from "react-scroll-motion";
 // assets
 import image_logo from '../assets/Logo_exnode.png';
-import mobile_anaylisePage from '../assets/mobile_img/mobile_analysit.png';
 import macbook from '../assets/Laptop_img/macbook_noScreen.png';
 import google_play from '../assets/playstore&appStoer/1664287128google-play-store-logo-png.png';
 import app_store from '../assets/playstore&appStoer/app-store-google-play-button-png-favpng-FTFfzCVmWnedDG1qp2K2giafF.jpg';
+
+// assets mobilePage
+import mobile_index from '../assets/mobile_img/mobiile_pageMain_1.png';
+import mobile_anaylisePage from '../assets/mobile_img/mobile_analysit.png';
+import mobile_transactionPage from '../assets/mobile_img/mobile_transaction_.png';
+import mobile_catagory from '../assets/mobile_img/mobile_pageCatagory.png';
 // component
 import Footer from '../Footer/footer';
 import Navbar from '../Navigationbar/navbar';
 
 function index() {
+  // changeWidth scripts
+  function changeWidth() {
+    var scroll = (window.pageYOffset / 5);
+    var width = scroll;
+    // var width = Math.min(100 - scroll);
+
+    document.getElementById('expand').style.width = width + '%';
+  }
+
+  window.addEventListener('scroll', function(){
+    requestAnimationFrame(changeWidth);
+  })
+
+  // scroll animation
+  const ZoomInScrollOut = batch(StickyIn(), FadeIn(-100), ZoomIn());
+  const FadeUp = batch(Fade(), MoveIn(-100));
+  const ZoomInScrollOut_1 = batch(ZoomIn(100), MoveOut(100), StickyOut());
   return (
     <>
     <div className='main-containerOutside z-1'>
-      <div className='container-outside h-[1500px] bg-[#C8FFE1]'>
+      <div className='container-outside h-[auto] bg-[#C8FFE1]'>
         <div className='container-large_header flex justify-center'>
           <h1 className='heading_name text-[150px] font-black opacity-[30%] mt-[-50px] color-[#000]'>EXNODE</h1>
           <img src={image_logo} alt='logo-inside' className='logo_exnode-outside absolute w-[100px] mt-[15px]'></img>
         </div>
         {/* layer-content */}
-        <div className='layout-content flex justify-center z-2'>
-          <div className='Layer-Content w-[80%]'>
+        <div className='layout-content flex justify-center z-2' >
+          <div className='Layer-Content expanded w-[80%]' id='expand'>
               <Navbar className='z-2'/>
               <div className='container-banner'>
                 <div className='banner'>
@@ -49,7 +72,36 @@ function index() {
                       </div>
                     </div>
                 </div>
-          </div>
+            </div>
+          {/* end-banner */}
+          <ScrollContainer>
+          <section className='container-contentSection_2 h-[1000px]'>
+            <div className='main_contentSection_2'>
+              <ScrollPage>
+                <Animator animation={FadeUp}>
+                <div className='heading_contentSection_2 flex justify-center w-[100%]'>
+                  <h1 className='heading_1'>Application จัดการภาษี & วิเคราะห์การใช้จ่าย</h1>
+                </div>
+                </Animator>
+                <div className='layout_content_Product_Page1'>
+                  <div className='container_content_Product_Page1 flex justify-between'>
+                    <div className='card_content card_1'>
+                      <h2 className='card_title font-bold text-[40px]'>เพียงปลายนิ้ว</h2>
+                      <p>คุณก็จะสามารถจัดการระบบภาษีในชีวิตประจำวันและยังสามารถช่วยวิเคราะห์คำนวณการจัดภาษีต่างๆได้โดยเพียงแค่ปลายนิ้ว</p>
+                    </div>
+                    <div className='card_content card_2'>
+                      <img src={mobile_index}></img>
+                    </div>
+                    <div className='card_content card_3'>
+                      <h2>เพียงปลายนิ้ว</h2>
+                    </div>
+                  </div>
+                </div>
+              </ScrollPage>
+            </div>
+          </section>
+          </ScrollContainer>
+          {/* <Footer/> */}
           </div>
         </div>
         {/* end of layer-content */}
@@ -58,6 +110,7 @@ function index() {
     </>
   )
 }
+
 
 
 export default index
