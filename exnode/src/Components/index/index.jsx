@@ -1,6 +1,6 @@
 import React, { useState } from 'react'; 
 import './index.css';
-// import { Animator, ScrollContainer, ScrollPage, batch, Fade, FadeIn, FadeOut, Move, MoveIn, MoveOut, Sticky, StickyIn, StickyOut, Zoom, ZoomIn, ZoomOut } from "react-scroll-motion";
+import { Animator, ScrollContainer, ScrollPage, batch, Fade, FadeIn, FadeOut, Move, MoveIn, MoveOut, Sticky, StickyIn, StickyOut, Zoom, ZoomIn, ZoomOut } from "react-scroll-motion";
 // assets
 import image_logo from '../assets/Logo_exnode.png';
 import macbook from '../assets/Laptop_img/macbook_noScreen.png';
@@ -32,28 +32,27 @@ function index() {
   })
   const hiddenElements = document.querySelectorAll('.hidden');
   hiddenElements.forEach((el) => observer.observe(el));
-
   // changeWidth scripts
-  // function changeWidth() {
-  //   var scroll = (window.pageYOffset / 5);
-  //   var width = scroll;
-  //   // var width = Math.min(100 - scroll);
+  function changeWidth() {
+    var scroll = (window.pageYOffset / 5);
+    var width = scroll;
+    // var width = Math.min(100 - scroll);
 
-  //   document.getElementById('expand').style.width = width + '%';
-  // }
+    document.getElementById('expand').style.width = width + '%';
+  }
 
-  // window.addEventListener('scroll', function(){
-  //   requestAnimationFrame(changeWidth);
-  // })
+  window.addEventListener('scroll', function(){
+    requestAnimationFrame(changeWidth);
+  })
 
-  // // scroll animation
-  // const ZoomInScrollOut = batch(FadeIn(),FadeOut());FadeOut();
-  // const FadeUp = batch(Fade(), MoveIn(-100));
-  // const ZoomInScrollOut_1 = batch(ZoomIn(100), MoveOut(100), StickyOut());
-  // const FadeUpMobile = batch(FadeIn(),ZoomIn(), MoveIn());
+  // scroll animation
+  const ZoomInScrollOut = batch(FadeIn(),FadeOut());FadeOut();
+  const FadeUp = batch(Fade(), MoveIn(-100));
+  const ZoomInScrollOut_1 = batch(ZoomIn(100), MoveOut(100), StickyOut());
+  const FadeUpMobile = batch(FadeIn(),ZoomIn(), MoveIn());
   return (
     <>
-    <div className='main-containerOutside z-1'>
+    <div className='main-containerOutside z-1 '>
       <div className='container-outside h-[auto] bg-[#C8FFE1]'>
         <div className='container-large_header flex justify-center'>
           <h1 className='heading_name text-[150px] font-black opacity-[30%] mt-[-50px] color-[#000]'>EXNODE</h1>
@@ -91,65 +90,65 @@ function index() {
                 </div>
             </div>
           {/* end-banner */}
-          {/* <ScrollContainer>
-          <ScrollPage> */}
+          <ScrollContainer>
+          <ScrollPage>
           <section className='container-contentSection_2 h-[1000px] p-[100px]'>
             <div className='main_contentSection_2'>
-                {/* <Animator animation={ZoomInScrollOut}> */}
+                <Animator animation={ZoomInScrollOut}>
                 <div className='heading_contentSection_2 flex justify-center w-[100%]'>
                   <h1 className='heading_1 text-[60px]'>Application จัดการภาษี & วิเคราะห์การใช้จ่าย</h1>
                 </div>
-                {/* </Animator> */}
+                </Animator>
                 <div className='layout_content_Product_Page1'>
                   <div className='container_content_Product_Page1 flex justify-between'>
-                    {/* <Animator animation={FadeUpMobile}> */}
+                    <Animator animation={FadeUpMobile}>
                     <div className='card_content card_1 w-[400px] text-[#000]'>
                       <h2 className='card_title font-bold text-[40px] text-[#1DCB42]'>เพียงปลายนิ้ว</h2>
                       <p>คุณก็จะสามารถจัดการระบบภาษีในชีวิตประจำวันและยังสามารถช่วยวิเคราะห์คำนวณการจัดภาษีต่างๆได้โดยเพียงแค่ปลายนิ้ว</p>
                     </div>
-                    {/* </Animator> */}
-                    {/* <Animator animation={FadeUpMobile}> */}
+                    </Animator>
+                    <Animator animation={FadeUpMobile}>
                     <div className='card_content card_2'>
                       <img src={mobile_index} className='mobile_index hidden w-[400px]'></img>
                     </div>
-                    {/* </Animator> */}
-                    {/* <Animator animation={FadeUpMobile}> */}
+                    </Animator>
+                    <Animator animation={FadeUpMobile}>
                     <div className='card_content card_3'>
                       <img src={IconApplication} alt='iconApplication' className='iconApplication_onInsert hidden w-[200px]'></img>
                     </div>
-                    {/* </Animator> */}
+                    </Animator>
                   </div>
                 </div>
             </div>
           </section>
-          {/* </ScrollPage> */}
+          </ScrollPage>
           {/* //section_3 */}
           <section className='container-contentSection_3 h-[1000px] p-[100px]'>
             <div className='main_contentSection_3'>
                 <div className='layout_content_Product_Page1'>
                   <div className='container_content_Product_Page1 flex justify-between'>
-                    {/* <Animator animation={FadeUp}> */}
+                    <Animator animation={FadeUp}>
                     <div className='card_content card_1 w-[400px] text-[#000]'>
                       <h2 className='card_title font-bold text-[40px] text-[#1DCB42]'>เพียงปลายนิ้ว</h2>
                       <p>คุณก็จะสามารถจัดการระบบภาษีในชีวิตประจำวันและยังสามารถช่วยวิเคราะห์คำนวณการจัดภาษีต่างๆได้โดยเพียงแค่ปลายนิ้ว</p>
                     </div>
-                    {/* </Animator> */}
-                    {/* <Animator animation={FadeUp}> */}
+                    </Animator>
+                    <Animator animation={FadeUp}>
                     <div className='card_content card_2'>
                       <img src={mobile_index} className='mobile_index w-[400px]'></img>
                     </div>
-                    {/* </Animator> */}
-                    {/* <Animator animation={FadeUp}> */}
+                    </Animator>
+                    <Animator animation={FadeUp}>
                     <div className='card_content card_3'>
                       <img src={IconApplication} alt='iconApplication' className='iconApplication_onInsert w-[200px]'></img>
                     </div>
-                    {/* </Animator> */}
+                    </Animator>
                   </div>
                 </div>
             </div>
-          </section>ß
-          {/* </ScrollContainer> */}
-          {/* <Footer/> */}
+          </section>
+          </ScrollContainer>
+          <Footer/>
           </div>
         </div>
         {/* end of layer-content */}

@@ -1,9 +1,10 @@
 import React from 'react'
-
+import Navbar from '../Navigationbar/navbar';
 function analysis() {
   return (
     <div>
-      <h1>Analysis</h1>
+      <div>
+      </div>
     </div>
   )
 }

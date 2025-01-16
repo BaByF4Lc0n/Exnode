@@ -15,7 +15,18 @@ import Contact from './Components/ContactPage/contact';
 import News from './Components/News/news';
 function App() {
   const [count, setCount] = useState(0)
-
+{/* scripts Animation */}
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    } else {
+      entry.target.classList.remove('show');
+    }
+  });
+})
+const hiddenElements = document.querySelectorAll('.hidden');
+hiddenElements.forEach((el) => observer.observe(el));
   return ( 
       <BrowserRouter>
          <Routes>
